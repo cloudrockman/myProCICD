@@ -31,6 +31,6 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_KEY }}
           script: |
-            sudo rm -rf /var/www/html/*
-            sudo git clone https://github.com/your-user/your-repo.git /var/www/html
+            sudo rf /var/www/html/*
+            sudo git clone git@github.com:cloudrockman/myProCICD.git /var/www/html
             sudo systemctl restart apache2
