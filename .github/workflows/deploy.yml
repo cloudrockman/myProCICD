@@ -33,5 +33,5 @@ jobs:
           script: |
             cd /var/www/html
             rm -rf *
-            git clone https://github.com/your-user/your-repo.git .
+            git clone git@github.com:cloudrockman/myProCICD.git .
             sudo systemctl restart apache2
