@@ -33,6 +33,5 @@ jobs:
           script: |
             rm -rf ~/temp-deploy && mkdir ~/temp-deploy
             git clone https://github.com/cloudrockman/myProCICD.git ~/temp-deploy
-            sudo rm -rf /var/www/html/*
-            sudo cp -r ~/temp-deploy/* /var/www/html/
+            sudo rsyn -av --delete --exclude 'uploads/' ~/temp-deploy/* /var/www/html/
             sudo systemctl restart apache2
