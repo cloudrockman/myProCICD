@@ -31,6 +31,8 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_KEY }}
           script: |
+            rm -rf ~/temp-deploy && mkdir ~/temp-deploy
+            git clone https://github.com/cloudrockman/myProCICD.git ~/temp-deploy
             sudo rm -rf /var/www/html/*
-            sudo git clone https://github.com/cloudrockman/myProCICD.git /var/www/html
+            sudo cp -r ~/temp-deploy/* /var/www/html/
             sudo systemctl restart apache2
